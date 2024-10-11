@@ -20,8 +20,8 @@ function CheckoutPage() {
                   <div className="card-body">
                     <h5 className="card-title">{item.title}</h5>
                     <p className="card-text">Quantity: {item.quantity}</p>
-                    <p className="card-text">Price: ${item.price}</p>
-                    <p className="card-text">Subtotal: ${item.price * item.quantity}</p>
+                    <p className="card-text">Price: ${item.price.toFixed(2)}</p>
+                    <p className="card-text">Subtotal: ${(item.price * item.quantity).toFixed(2)}.</p>
                   </div>
                 </div>
               ))}

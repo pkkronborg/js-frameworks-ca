@@ -23,19 +23,19 @@ function ProductDetails() {
     const discountedPercent =price ? ((price-discountedPrice)/price)*100 : 0;
     const reviews = data.reviews && data.reviews.length > 0 ? data.reviews : [];
     return (
-      <div>
+      <div className="mt-3">
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-6 d-flex justify-content-center">
             {data.image && data.image.url && (
-            <img className="img-fluid" src={data.image.url} alt={data.image.alt || "Product image"}></img>)}
+            <img className="img-fluid col-lg-6" src={data.image.url} alt={data.image.alt || "Product image"}></img>)}
           </div>
           <div className="col-md-6">
-            <div>
+            <div className="d-flex">
               <h1>{data.title}</h1>
-              <p className="text-danger">{discountedPercent > 0 && `-${discountedPercent.toFixed(0)}%`}</p>
+              <p className="text-danger fw-bold fs-3 ps-5">{discountedPercent > 0 && `-${discountedPercent.toFixed(0)}%`}</p>
             </div>
-            <p>{data.descrption}</p>
-            <p>{data.discountedPrice}</p>
+            <p>{data.description}</p>
+            <p>${data.discountedPrice}</p>
             <button className="btn btn-primary" onClick={() => addToCart(data)}>Add to cart</button>
           </div>
         </div>
